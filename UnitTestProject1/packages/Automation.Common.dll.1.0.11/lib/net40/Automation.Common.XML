@@ -1,0 +1,199 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Automation.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Automation.Common.ItemInfoAttribute">
+            <summary>
+            Establishes associations among work items and test methods. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.ItemInfoAttribute.#ctor(System.String,Automation.Common.ItemType)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Automation.Common.ItemInfoAttribute"/> class.
+            </summary>
+            <param name="id">
+            The id.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+        </member>
+        <member name="M:Automation.Common.ItemInfoAttribute.#ctor(System.String,Automation.Common.ItemType,System.String)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Automation.Common.ItemInfoAttribute"/> class.
+            </summary>
+            <param name="id">
+            The id.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="description">
+            The description.
+            </param>
+        </member>
+        <member name="M:Automation.Common.ItemInfoAttribute.#ctor(System.String,Automation.Common.ItemType,Automation.Common.ItemStatus)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Automation.Common.ItemInfoAttribute"/> class.
+            </summary>
+            <param name="id">
+            The id.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="status">
+            The status.
+            </param>
+        </member>
+        <member name="M:Automation.Common.ItemInfoAttribute.#ctor(System.String,Automation.Common.ItemType,Automation.Common.ItemStatus,System.String)">
+            <summary>
+            Initialises a new instance of the <see cref="T:Automation.Common.ItemInfoAttribute"/> class.
+            </summary>
+            <param name="id">
+            The id.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="status">
+            The status.
+            </param>
+            <param name="description">
+            The description.
+            </param>
+        </member>
+        <member name="P:Automation.Common.ItemInfoAttribute.Description">
+            <summary>
+            Gets or sets the description.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.ItemInfoAttribute.Id">
+            <summary>
+            Gets or sets the id.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.ItemInfoAttribute.ItemStatus">
+            <summary>
+            Gets or sets the item status.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.ItemInfoAttribute.ItemType">
+            <summary>
+            Gets or sets the item type.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.ItemStatus">
+            <summary>
+            Define status to indicate the item status.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.ItemStatus.Unknown">
+            <summary>
+            The unknown status.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.ItemStatus.Open">
+            <summary>
+            The open status.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.ItemStatus.Resolved">
+            <summary>
+            The resolved or fixed status.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.ItemStatus.Closed">
+            <summary>
+            The closed status.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.ItemType">
+            <summary>
+            The item types.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.ItemType.Unknown">
+            <summary>
+            The Unknown item type.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.ItemType.TestCase">
+            <summary>
+            The test case.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.ItemType.Bug">
+            <summary>
+            The bug.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.ItemType.Task">
+            <summary>
+            The task.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.TestCategory">
+            <summary>
+                The test category constants.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.TestCategory.RunOnCI">
+            <summary>
+            The continuous integration category.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.TestCategory.Smoke">
+            <summary>
+            The smoke test category.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.TestCategory.Sanity">
+            <summary>
+            The sanity test category.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.TestCategory.OperatorGroups">
+            <summary>
+            The operator groups test category.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.TestProperty">
+            <summary>
+            The test property constants define test method property names.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.TestProperty.TestCase">
+            <summary>
+            The test case property.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.TestProperty.Bug">
+            <summary>
+            The bug property.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.TestPropertySetting">
+            <summary>
+            The test property constants define test method property names.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.TestPropertySetting.TestCase">
+            <summary>
+            The test case property name.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.TestPropertySetting.Bug">
+            <summary>
+            The bug property name.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.TestPropertySetting.BugStatus">
+            <summary>
+            The bug status property name.
+            </summary>
+        </member>
+    </members>
+</doc>

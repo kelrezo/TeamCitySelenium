@@ -1,0 +1,2103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Automation.Common.Testing</name>
+    </assembly>
+    <members>
+        <member name="T:Automation.Common.Testing.ConfigurationHelper">
+            <summary>
+                The configuration helper.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.ConfigurationHelper.GetAppSetting(System.String)">
+            <summary>
+            Gets the value for the specified app setting key.
+            </summary>
+            <param name="key">
+            The app setting key.
+            </param>
+            <returns>
+            The app setting value.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.ConfigurationHelper.GetWebConfiguration(System.String,System.String,System.String)">
+            <summary>
+            To get the application setting value from web configuration file.
+            </summary>
+            <param name="key">
+            The key name of the application setting element.
+            </param>
+            <param name="virtualPath">
+            The virtual path of the application to retrieve information from.
+            </param>
+            <param name="site">
+            The site name where the application installed.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.ConfigurationHelper.SetAppSetting(System.String,System.String)">
+            <summary>
+            Sets the app setting.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.ConfigurationHelper.SetWebConfiguration(System.String,System.String,System.String,System.String)">
+            <summary>
+            Sets the web configuration appSettings section.
+            </summary>
+            <param name="key">
+            The appSettings key.
+            </param>
+            <param name="value">
+            The appSettings value to be set.
+            </param>
+            <param name="virtualPath">
+            The virtual path of the web application.
+            </param>
+            <param name="site">
+            Optional parameter. The site of the web application.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.ConfigurationHelper.GetValue``1(System.Collections.Specialized.NameValueCollection,System.String,``0@)">
+            <summary>
+            Get app setting value from <paramref name="appSettings"/> based on the specified <paramref name="key"/>.
+            </summary>
+            <param name="appSettings">
+            The app settings.
+            </param>
+            <param name="key">
+            The key.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <typeparam name="T">
+            The value type.
+            </typeparam>
+            <returns>
+            Return true if successfully retrieves setting from the <paramref name="appSettings"/>. Otherwise false.
+            </returns>
+        </member>
+        <member name="T:Automation.Common.Testing.SettingsUtils">
+            <summary>
+            The base class contains basic methods and operations for configuring settings.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.SettingsUtils.GetConfigOptionValue``1(System.String,``0,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the configuration option value.
+            </summary>
+            <param name="key">
+            The key name.
+            </param>
+            <param name="defaultValue">
+            The default value.
+            </param>
+            <param name="appSettings">
+            The app settings.
+            </param>
+            <typeparam name="T">
+            The value type.
+            </typeparam>
+            <returns>
+            The value of type <see cref="!:T"/> from configuration file.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.SettingsUtils.GetConfigOptionValueDouble(System.String,System.Double,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            TGets the configuration option value as double.
+            </summary>
+            <param name="optionName">
+            The option name.
+            </param>
+            <param name="defaultValue">
+            The default value.
+            </param>
+            <param name="appSettings">
+            The app settings.
+            </param>
+            <returns>
+            The <see cref="T:System.Double"/>.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.SettingsUtils.GetConfigOptionValueInt(System.String,System.Int32,System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Gets the configuration option value as integer.
+            </summary>
+            <param name="key">
+            The key.
+            </param>
+            <param name="defaultValue">
+            The default value.
+            </param>
+            <param name="appSettings">
+            The app settings.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="T:Automation.Common.Testing.TestEntityStringAssert">
+            <summary>
+            The test entity assert extensions for string assertion.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertContains(Automation.Common.Testing.Entity.TestEntity,System.String,System.String)">
+            <summary>
+            Verifies that the first string contains the second string. Displays a message if the assertion fails, and applies the specified formatting to it. This method is case sensitive.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="value">
+            The string that is expected to contain <paramref name="substring"/>.
+            </param>
+            <param name="substring">
+            The string expected to occur within <paramref name="value"/>.
+            </param>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="substring"/> is not found in <paramref name="value"/>.
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertContains(Automation.Common.Testing.Entity.TestEntity,System.String,System.String,System.String)">
+            <summary>
+            Verifies that the first string contains the second string. Displays a message if the assertion fails, and applies the specified formatting to it. This method is case sensitive.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="value">
+            The string that is expected to contain <paramref name="substring"/>.
+            </param>
+            <param name="substring">
+            The string expected to occur within <paramref name="value"/>.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results.
+            </param>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="substring"/> is not found in <paramref name="value"/>.
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertContains(Automation.Common.Testing.Entity.TestEntity,System.String,System.String,System.String,System.Object[])">
+            <summary>
+            Verifies that the first string contains the second string. Displays a message if the assertion fails, and applies the specified formatting to it. This method is case sensitive.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="value">
+            The string that is expected to contain <paramref name="substring"/>.
+            </param>
+            <param name="substring">
+            The string expected to occur within <paramref name="value"/>.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results.
+            </param>
+            <param name="parameters">
+            An array of parameters to use when formatting <paramref name="message"/>.
+            </param>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="substring"/> is not found in <paramref name="value"/>.
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertMatches(Automation.Common.Testing.Entity.TestEntity,System.String,System.Text.RegularExpressions.Regex)">
+            <summary>
+            Verifies that the specified string matches the regular expression. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="value">
+            The string that is expected to contain <paramref name="pattern"/>.
+            </param>
+            <param name="pattern">
+            The regular expression that <paramref name="value"/> is expected to match.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertMatches(Automation.Common.Testing.Entity.TestEntity,System.String,System.Text.RegularExpressions.Regex,System.String)">
+            <summary>
+            Verifies that the specified string matches the regular expression. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="value">
+            The string that is expected to contain <paramref name="pattern"/>.
+            </param>
+            <param name="pattern">
+            The regular expression that <paramref name="value"/> is expected to match.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertMatches(Automation.Common.Testing.Entity.TestEntity,System.String,System.Text.RegularExpressions.Regex,System.String,System.Object[])">
+            <summary>
+            Verifies that the specified string matches the regular expression. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="value">
+            The string that is expected to contain <paramref name="pattern"/>.
+            </param>
+            <param name="pattern">
+            The regular expression that <paramref name="value"/> is expected to match.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results.
+            </param>
+            <param name="parameters">
+            An array of parameters to use when formatting <paramref name="message"/>.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertAreEqual(Automation.Common.Testing.Entity.TestEntity,System.String,System.String,System.Boolean,System.Globalization.CultureInfo)">
+            <summary>
+            Verifies that two specified strings are equal, ignoring case or not as specified, and using the culture info specified. The assertion fails if they are not equal. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="expected">
+            The first string to compare. This is the string the unit test expects.
+            </param>
+            <param name="actual">
+            The second string to compare. This is the string the unit test produced.
+            </param>
+            <param name="ignoreCase">
+            A Boolean value that indicates a case-sensitive or insensitive comparison. true indicates a case-insensitive comparison.
+            </param>
+            <param name="culture">
+            A <see cref="T:System.Globalization.CultureInfo"/> object that supplies culture-specific comparison information.
+            </param>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="expected"/> is not equal to <paramref name="actual"/>.
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertAreEqual(Automation.Common.Testing.Entity.TestEntity,System.String,System.String,System.Boolean,System.Globalization.CultureInfo,System.String)">
+            <summary>
+            Verifies that two specified strings are equal, ignoring case or not as specified, and using the culture info specified. The assertion fails if they are not equal. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="expected">
+            The first string to compare. This is the string the unit test expects.
+            </param>
+            <param name="actual">
+            The second string to compare. This is the string the unit test produced.
+            </param>
+            <param name="ignoreCase">
+            A Boolean value that indicates a case-sensitive or insensitive comparison. true indicates a case-insensitive comparison.
+            </param>
+            <param name="culture">
+            A <see cref="T:System.Globalization.CultureInfo"/> object that supplies culture-specific comparison information.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results.
+            </param>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="expected"/> is not equal to <paramref name="actual"/>.
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertAreEqual(Automation.Common.Testing.Entity.TestEntity,System.String,System.String)">
+            <summary>
+            Verifies that two specified strings are equal, ignoring case or not as specified, and using the culture info specified. The assertion fails if they are not equal. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="expected">
+            The first string to compare. This is the string the unit test expects.
+            </param>
+            <param name="actual">
+            The second string to compare. This is the string the unit test produced.
+            </param>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="expected"/> is not equal to <paramref name="actual"/>.
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertAreEqual(Automation.Common.Testing.Entity.TestEntity,System.String,System.String,System.Boolean)">
+            <summary>
+            Verifies that two specified strings are equal, ignoring case or not as specified, and using the culture info specified. The assertion fails if they are not equal. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="expected">
+            The first string to compare. This is the string the unit test expects.
+            </param>
+            <param name="actual">
+            The second string to compare. This is the string the unit test produced.
+            </param>
+            <param name="ignoreCase">
+            A Boolean value that indicates a case-sensitive or insensitive comparison. true indicates a case-insensitive comparison.
+            </param>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="expected"/> is not equal to <paramref name="actual"/>.
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertAreEqual(Automation.Common.Testing.Entity.TestEntity,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            Verifies that two specified strings are equal, ignoring case or not as specified, and using the culture info specified. The assertion fails if they are not equal. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="expected">
+            The first string to compare. This is the string the unit test expects.
+            </param>
+            <param name="actual">
+            The second string to compare. This is the string the unit test produced.
+            </param>
+            <param name="ignoreCase">
+            A Boolean value that indicates a case-sensitive or insensitive comparison. true indicates a case-insensitive comparison.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results.
+            </param>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="expected"/> is not equal to <paramref name="actual"/>.
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertAreEqual(Automation.Common.Testing.Entity.TestEntity,System.String,System.String,System.Boolean,System.String,System.Object[])">
+            <summary>
+            Verifies that two specified strings are equal, ignoring case or not as specified, and using the culture info specified. The assertion fails if they are not equal. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="expected">
+            The first string to compare. This is the string the unit test expects.
+            </param>
+            <param name="actual">
+            The second string to compare. This is the string the unit test produced.
+            </param>
+            <param name="ignoreCase">
+            A Boolean value that indicates a case-sensitive or insensitive comparison. true indicates a case-insensitive comparison.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results.
+            </param>
+            <param name="parameters">
+            An array of parameters to use when formatting <paramref name="message"/>.
+            </param>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="expected"/> is not equal to <paramref name="actual"/>.
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityStringAssert.AssertAreEqual(Automation.Common.Testing.Entity.TestEntity,System.String,System.String,System.Boolean,System.Globalization.CultureInfo,System.String,System.Object[])">
+            <summary>
+            Verifies that two specified strings are equal, ignoring case or not as specified, and using the culture info specified. The assertion fails if they are not equal. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="expected">
+            The first string to compare. This is the string the unit test expects.
+            </param>
+            <param name="actual">
+            The second string to compare. This is the string the unit test produced.
+            </param>
+            <param name="ignoreCase">
+            A Boolean value that indicates a case-sensitive or insensitive comparison. true indicates a case-insensitive comparison.
+            </param>
+            <param name="culture">
+            A <see cref="T:System.Globalization.CultureInfo"/> object that supplies culture-specific comparison information.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results.
+            </param>
+            <param name="parameters">
+            An array of parameters to use when formatting <paramref name="message"/>.
+            </param>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="expected"/> is not equal to <paramref name="actual"/>.
+            </exception>
+        </member>
+        <member name="T:Automation.Common.Testing.Predicate">
+            <summary>
+            Represents the method that defines a set of criteria and determines whether those criteria are met.
+            </summary>
+            <returns>
+            Return true if all the criteria defined within the method represented by this delegate are met; otherwise, false.
+            </returns>
+        </member>
+        <member name="T:Automation.Common.Testing.TestSettings">
+            <summary>
+            Defines global test settings.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.TestSettings.instance">
+            <summary>
+            The singleton instance of <see cref="T:Automation.Common.Testing.TestSettings"/>.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.TestSettings.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:Automation.Common.Testing.TestSettings"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.TestSettings.Initialize">
+            <summary>
+            To initialize the instance properties.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.TestSettings.ApplySettings(System.Collections.Specialized.NameValueCollection)">
+            <summary>
+            Apply settings from app configuration file.
+            </summary>
+            <param name="appSettings">
+            The app settings.
+            </param>
+        </member>
+        <member name="P:Automation.Common.Testing.TestSettings.DropRoot">
+            <summary>
+            Gets or sets the drop root.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.TestSettings.MaxAllowedConsecutiveFailures">
+            <summary>
+            Gets or sets the max allowed consecutive failures.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.TestSettings.ThinkTimeMultiplier">
+            <summary>
+            Gets or sets the think time multiplier.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.TestSettings.WaitForReadyTimeout">
+            <summary>
+            Gets or sets the number of milliseconds to wait for the application to be ready.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.TestSettings.Instance">
+            <summary>
+            Gets the instance.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.Constants">
+            <summary>
+                The constants.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.ClassElement">
+            <summary>
+                The class element.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.CreateTime">
+            <summary>
+                The create time.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.EndTimeAttribute">
+            <summary>
+                The end time attribute.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.MessageElement">
+            <summary>
+                The message element.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.NameAttribute">
+            <summary>
+                The name attribute.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.ProjectElement">
+            <summary>
+                The project element.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.Root">
+            <summary>
+                The root.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.ScenarioElement">
+            <summary>
+                The scenario element.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.StartTimeAttribute">
+            <summary>
+                The start time attribute.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.StatusAttribute">
+            <summary>
+                The status attribute.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.StyleSheetData">
+            <summary>
+                The style sheet data.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.StyleSheetInstruction">
+            <summary>
+                The style sheet instruction.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Constants.TestCaseElement">
+            <summary>
+                The test case element.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.Entity.EntityBase">
+            <summary>
+            The base class to be derived by all test entity types.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.EntityBase.endTime">
+            <summary>
+            The _end time.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.EntityBase.name">
+            <summary>
+            The _name.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.EntityBase.startTime">
+            <summary>
+            The _start time.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.EntityBase.status">
+            <summary>
+            The _status.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.EntityBase.fullyQualifiedName">
+            <summary>
+            The full qualified name.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.EntityBase.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Automation.Common.Testing.Entity.EntityBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.EntityBase.Equals(Automation.Common.Testing.Entity.EntityBase)">
+            <summary>
+            Determines if the current test entity is the same as the target test entity.
+            </summary>
+            <param name="target">
+            The target test entity.
+            </param>
+            <returns>
+            The <see cref="T:System.Boolean"/> value indicating whether the current test entity is the same as the target test entity.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.EntityBase.SetEndTime">
+            <summary>
+            Sets the end time to current time.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.EntityBase.SetStatus(Automation.Common.Testing.Status)">
+            <summary>
+            Sets the status recursively.
+            </summary>
+            <param name="executionStatus">
+            The status.
+            </param>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.EntityBase.EndTime">
+            <summary>
+            Gets or sets the end time.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.EntityBase.FullyQualifiedName">
+            <summary>
+            Gets or sets the full qualified name.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.EntityBase.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+            <value>
+            The entity name.
+            </value>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.EntityBase.Parent">
+            <summary>
+            Gets or sets the parent.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.EntityBase.StartTime">
+            <summary>
+            Gets or sets the start time.
+            </summary>
+            <value>
+            The start time.
+            </value>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.EntityBase.Status">
+            <summary>
+            Gets or sets the status.
+            </summary>
+            <value>
+            The status.
+            </value>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.EntityBase.Saved">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:Automation.Common.Testing.Entity.EntityBase"/> is saved.
+            </summary>
+            <value>
+            <c>true</c> if saved; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Automation.Common.Testing.Entity.Message">
+            <summary>
+            The test case or test scenario validation message.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.Message.#ctor">
+            <summary>
+            Message constructor. When creating a new message, set the message time as the current time.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.Message.Description">
+            <summary>
+            The message body of the current message.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.Message.Time">
+            <summary>
+            The time when the message created.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.Message.MessageType">
+            <summary>
+            The current message type.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.Entity.MessageType">
+            <summary>
+            The message type.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.MessageType.None">
+            <summary>
+            When the message type is not defined.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.MessageType.Error">
+            <summary>
+            The validation error type.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.MessageType.Exception">
+            <summary>
+            The exception type.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.MessageType.Warning">
+            <summary>
+            The warning type.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.MessageType.Information">
+            <summary>
+            The information type.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.Entity.Scenario">
+            <summary>
+                Test scenario, child type of test case. Used for data-driven test cases.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.Entity.TestEntity">
+            <summary>
+                The test case.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.TestEntity.DefaultFailMessage">
+            <summary>
+                The default fail message.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.TestEntity.failuresInRowCounter">
+            <summary>
+                The failures in row counter.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.TestEntity.previousTestStatus">
+            <summary>
+                The previous test status.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.TestEntity.messages">
+            <summary>
+                The test execution messages.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:Automation.Common.Testing.Entity.TestEntity"/> class.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.ResetFailuresInRowCounter">
+            <summary>
+                Resets failures in row counter to 0.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.Execute(System.Action{Automation.Common.Testing.Entity.TestEntity},System.Action)">
+            <summary>
+            The test case execution pattern.
+            </summary>
+            <param name="executionAction">
+            The actual test steps to be executed.
+            </param>
+            <param name="cleanupAction">
+            The clean up Action. Invoked at the end of the test execution if defined.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.ExecuteAsync(System.Func{Automation.Common.Testing.Entity.TestEntity,System.Threading.Tasks.Task},System.Action)">
+            <summary>
+            The test case execution pattern.
+            </summary>
+            <param name="executionAction">
+            The actual test steps to be executed.
+            </param>
+            <param name="cleanupAction">
+            The clean up Action. Invoked at the end of the test execution if defined.
+            </param>
+            <returns>
+            The <see cref="T:System.Threading.Tasks.Task"/>.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.ExpectException``1(System.Action{Automation.Common.Testing.Entity.TestEntity},System.String,System.Action)">
+            <summary>
+            Execute test procedures which expect TException.
+            </summary>
+            <param name="executionAction">
+            The action to set up exception scenario.
+            </param>
+            <param name="message">
+            The user defined error message to be logged when the expected exception is not thrown.
+            </param>
+            <param name="cleanupAction">
+            Performs a clean up action if specified.
+            </param>
+            <typeparam name="TException">
+            The expected exception type.
+            </typeparam>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.ExpectExceptionAsync``1(System.Func{Automation.Common.Testing.Entity.TestEntity,System.Threading.Tasks.Task},System.String,System.Action)">
+            <summary>
+            Execute test procedures which expect TException.
+            </summary>
+            <param name="executionAction">
+            The action to set up exception scenario.
+            </param>
+            <param name="message">
+            The user defined error message to be logged when the expected exception is not thrown.
+            </param>
+            <param name="cleanupAction">
+            Performs a clean up action if specified.
+            </param>
+            <typeparam name="TException">
+            The expected exception type.
+            </typeparam>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.ExpectExceptionAsync``1(System.Func{Automation.Common.Testing.Entity.TestEntity,System.Threading.Tasks.Task},System.Action{``0,Automation.Common.Testing.Entity.TestEntity},System.String,System.Action)">
+            <summary>
+            Execute test procedures which expect TException.
+            </summary>
+            <param name="executionAction">
+            The action to set up exception scenario.
+            </param>
+            <param name="exceptionValidator">
+            The function to validate the exception contains expected information, such as messages or reasons.
+            </param>
+            <param name="message">
+            The user defined error message to be logged when the expected exception is not thrown.
+            </param>
+            <param name="cleanupAction">
+            Performs a clean up action if specified.
+            </param>
+            <typeparam name="TException">
+            The expected exception type.
+            </typeparam>
+            <returns>returns task</returns>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.ExpectException``1(System.Action{Automation.Common.Testing.Entity.TestEntity},System.Action{``0,Automation.Common.Testing.Entity.TestEntity},System.String,System.Action)">
+            <summary>
+            Execute test procedures which expect TException.
+            </summary>
+            <param name="executionAction">
+            The action to set up exception scenario.
+            </param>
+            <param name="exceptionValidator">
+            The function to validate the exception contains expected information, such as messages or reasons.
+            </param>
+            <param name="message">
+            The user defined error message to be logged when the expected exception is not thrown.
+            </param>
+            <param name="cleanupAction">
+            Performs a clean up action if specified.
+            </param>
+            <typeparam name="TException">
+            The expected exception type.
+            </typeparam>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.Init(System.Action)">
+            <summary>
+            Initialize test prerequisites.
+            </summary>
+            <param name="initialise">
+            The initialization steps.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.LogError(System.String)">
+            <summary>
+            Log an error message for the current test entity.
+            </summary>
+            <param name="message">
+            The message to be logged.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.LogError(System.String,System.Object[])">
+            <summary>
+            Log an error message for the current test entity.
+            </summary>
+            <param name="message">
+            The message to be logged.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.LogError(System.String,System.String,System.Object[])">
+            <summary>
+            Log an error message for the current test entity.
+            </summary>
+            <param name="message">
+            The message to be logged.
+            </param>
+            <param name="defaultMessage">
+            The default Message.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.LogErrors(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Log all messages as error.
+            </summary>
+            <param name="errorMessages">
+            The messages to be logged.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.LogInfo(System.String)">
+            <summary>
+            Log a message for the current test entity as information.
+            </summary>
+            <param name="message">
+            The message to be logged.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.LogInfo(System.String,System.Object[])">
+            <summary>
+            Log a message for the current test entity as information.
+            </summary>
+            <param name="message">
+            The message to be logged.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.LogWarning(System.String)">
+            <summary>
+            Log the message as warning.
+            </summary>
+            <param name="message">
+            The message to be logged.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.LogWarning(System.String,System.Object[])">
+            <summary>
+            Log the message as warning.
+            </summary>
+            <param name="message">
+            The message to be logged.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.FailuresInRowUp">
+            <summary>
+                The failures in row goes up by 1.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.LogMessage(Automation.Common.Testing.Entity.MessageType,System.String)">
+            <summary>
+            Log the message for the current test entity.
+            </summary>
+            <param name="messageType">
+                Specify the message type.
+            </param>
+            <param name="message">
+                The message.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.LogMessage(Automation.Common.Testing.Entity.MessageType,System.String,System.Object[])">
+            <summary>
+            Log the message for the current test entity.
+            </summary>
+            <param name="messageType">
+            Specify the message type.
+            </param>
+            <param name="message">
+            The message.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.LogMessage(Automation.Common.Testing.Entity.MessageType,System.String,System.String,System.Object[])">
+            <summary>
+            Log the message for the current test entity.
+            </summary>
+            <param name="messageType">
+            Specify the message type.
+            </param>
+            <param name="message">
+            The message.
+            </param>
+            <param name="defaultMessage">
+            The default Message.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestEntity.CreateCompleteMessage(System.String,System.String,System.Object[])">
+            <summary>
+            Creates a complete log message from the specified message, or default message and parameters.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="defaultMessage">
+            The default Message.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+            <returns>
+            The <see cref="T:System.String"/> represents the full log message.
+            </returns>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.TestEntity.FailuresInRowCounter">
+            <summary>
+                Gets the failures in row counter.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.TestEntity.Messages">
+            <summary>
+                Gets the messages.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.Scenario._testCase">
+            <summary>
+                The _test case.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.Scenario.#ctor(Automation.Common.Testing.Entity.TestCase,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Automation.Common.Testing.Entity.Scenario"/> class.
+            </summary>
+            <param name="testCase">
+            The test case.
+            </param>
+            <param name="name">
+            The name.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.Scenario.#ctor">
+            <summary>
+                Prevents a default instance of the <see cref="T:Automation.Common.Testing.Entity.Scenario"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.Scenario.GetTestScenario(Automation.Common.Testing.Entity.TestCase,System.String)">
+            <summary>
+            Factory method to get a test <see cref="T:Automation.Common.Testing.Entity.Scenario"/> instance.
+            </summary>
+            <param name="parent">
+            The parent, which is of type <see cref="P:Automation.Common.Testing.Entity.Scenario.TestCase"/>.
+            </param>
+            <param name="fullyQualifiedName">
+            The fully qualified name.
+            </param>
+            <returns>
+            The <see cref="T:Automation.Common.Testing.Entity.Scenario"/> instance.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.Scenario.SetEndTime">
+            <summary>
+                Sets the end time to current time.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.Scenario.SetStatus(Automation.Common.Testing.Status)">
+            <summary>
+            Sets the status recursively.
+            </summary>
+            <param name="executionStatus">
+            The execution status.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.Scenario.ToString">
+            <summary>
+                Get basic information according to the current status.
+            </summary>
+            <returns>
+                The <see cref="T:Automation.Common.Testing.Entity.Scenario"/> instance as <see cref="T:System.String"/>.
+            </returns>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.Scenario.TestCase">
+            <summary>
+                Gets or sets the test case.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.Entity.TestCase">
+            <summary>
+                The test case. Represents a standard test case.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.TestCase.testClass">
+            <summary>
+                The _test class.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestCase.#ctor">
+            <summary>
+                Prevents a default instance of the <see cref="T:Automation.Common.Testing.Entity.TestCase"/> class from being created.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestCase.CreateScenario(System.String)">
+            <summary>
+            Create a child <see cref="T:Automation.Common.Testing.Entity.Scenario"/> from the given scenario name.
+            </summary>
+            <param name="name">
+            The name for the new <see cref="T:Automation.Common.Testing.Entity.Scenario"/>.
+            </param>
+            <returns>
+            A new instance of <see cref="T:Automation.Common.Testing.Entity.Scenario"/>.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestCase.SetEndTime">
+            <summary>
+                Sets the end time to current time.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestCase.SetStatus(Automation.Common.Testing.Status)">
+            <summary>
+            Sets the status recursively.
+            </summary>
+            <param name="executionStatus">
+            The status.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestCase.ToString">
+            <summary>
+                Get basic information according to the current status.
+            </summary>
+            <returns>
+                The <see cref="T:System.String"/> value represents the <see cref="T:Automation.Common.Testing.Entity.TestCase"/>.
+            </returns>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.TestCase.Scenarios">
+            <summary>
+                Gets the scenarios.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.TestCase.TestClass">
+            <summary>
+                Gets or sets the test class.
+            </summary>
+            <value>
+                The test class.
+            </value>
+        </member>
+        <member name="T:Automation.Common.Testing.Entity.TestClass">
+            <summary>
+                The test class that contains the test cases.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.TestClass.testProject">
+            <summary>
+                The test project that the current test class belongs to.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestClass.#ctor">
+            <summary>
+            Prevents a default instance of the <see cref="T:Automation.Common.Testing.Entity.TestClass"/> class from being created. 
+                Initializes a new instance of the <see cref="T:Automation.Common.Testing.Entity.TestClass"/> class.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestClass.GetTestCase(System.String)">
+            <summary>
+            To either get an existing test case, or create a new test case if does not exist.
+            </summary>
+            <param name="fullName">
+            The test case full name.
+            </param>
+            <returns>
+            The <see cref="T:Automation.Common.Testing.Entity.TestCase"/> matches the specified test case full name.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestClass.SetEndTime">
+            <summary>
+                Sets the end time to current time.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestClass.SetStatus(Automation.Common.Testing.Status)">
+            <summary>
+            Sets the status recursively.
+            </summary>
+            <param name="executionStatus">
+            The status.
+            </param>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.TestClass.TestProject">
+            <summary>
+                Gets the test project.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.TestClass.TestCases">
+            <summary>
+                Gets the test cases.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.Entity.TestProject">
+            <summary>
+                The test project.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.TestProject.testResult">
+            <summary>
+                The _test result.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestProject.#ctor">
+            <summary>
+                Prevents a default instance of the <see cref="T:Automation.Common.Testing.Entity.TestProject"/> class from being created. 
+                Initializes a new instance of the <see cref="T:Automation.Common.Testing.Entity.TestProject"/> class.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestProject.GetTestClass(System.String)">
+            <summary>
+            To either get an existing test class, or create a new test class if does not exist.
+            </summary>
+            <param name="fullName">
+            The test class full name.
+            </param>
+            <returns>
+            The <see cref="M:Automation.Common.Testing.Entity.TestProject.GetTestClass(System.String)"/> matches the specified test class full name.
+            </returns>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.TestProject.TestResult">
+            <summary>
+                Gets the test result.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.TestProject.TestClasses">
+            <summary>
+                Gets the test classes.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.Entity.TestResult">
+            <summary>
+                The test result.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.TestResult.Results">
+            <summary>
+                The test projects.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Entity.TestResult.document">
+            <summary>
+                The _document.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Automation.Common.Testing.Entity.TestResult"/> class.
+            </summary>
+            <param name="resultFile">
+            The result file.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.GetTestProject(System.String)">
+            <summary>
+            To either get an existing test project, or create a new test project if does not exist.
+            </summary>
+            <param name="projectFullName">
+            The project full name.
+            </param>
+            <returns>
+            The <see cref="T:Automation.Common.Testing.Entity.TestProject"/> matches the specified project full name.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.InitTestResult(System.String)">
+            <summary>
+            Initialize an instance of <see cref="T:Automation.Common.Testing.Entity.TestResult"/> from test result file name.
+            </summary>
+            <param name="fullyQualifiedName">
+            The fully qualified name of the test result.
+            </param>
+            <returns>
+            The <see cref="T:Automation.Common.Testing.Entity.TestResult"/> instance.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.SaveAll">
+            <summary>
+                Update all information to result elements, and save into the result file.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.Save">
+            <summary>
+                Save this result content into the result file.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.ConstructEntityXElement(Automation.Common.Testing.Entity.EntityBase,System.String)">
+            <summary>
+            To construct an entity xml element.
+            </summary>
+            <param name="entity">
+            The entity object.
+            </param>
+            <param name="elementName">
+            The element name.
+            </param>
+            <returns>
+            The entity element.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.GetEntityElement(Automation.Common.Testing.Entity.EntityBase,System.Xml.Linq.XContainer,System.String)">
+            <summary>
+            The get entity.
+            </summary>
+            <param name="entity">
+            The entity.
+            </param>
+            <param name="parent">
+            The parent.
+            </param>
+            <param name="childElement">
+            The child Element.
+            </param>
+            <returns>
+            The <see cref="T:System.Xml.Linq.XElement"/>.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.Init(System.String)">
+            <summary>
+            Initialize the specified result file. Create the result file if does not exist yet.
+            </summary>
+            <param name="resultFile">
+            The result file name.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.InitTestCase(Automation.Common.Testing.Entity.TestCase)">
+            <summary>
+            Initialize the test case.
+            </summary>
+            <param name="entity">
+            The entity.
+            </param>
+            <returns>
+            The <see cref="T:System.Xml.Linq.XElement"/>.
+            </returns>
+            <exception cref="T:System.NullReferenceException">
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.InitTestClass(Automation.Common.Testing.Entity.TestClass)">
+            <summary>
+            Initialize the test class.
+            </summary>
+            <param name="entity">
+            The entity.
+            </param>
+            <returns>
+            The <see cref="T:System.Xml.Linq.XElement"/>.
+            </returns>
+            <exception cref="T:System.NullReferenceException">
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.InitTestProject(Automation.Common.Testing.Entity.TestProject)">
+            <summary>
+            Initialize the test project.
+            </summary>
+            <param name="entity">
+            The test project.
+            </param>
+            <returns>
+            The <see cref="T:System.Xml.Linq.XElement"/>.
+            </returns>
+            <exception cref="T:System.NullReferenceException">
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.InitTestScenario(Automation.Common.Testing.Entity.Scenario)">
+            <summary>
+            Initialize the test scenario.
+            </summary>
+            <param name="entity">
+            The entity.
+            </param>
+            <returns>
+            The <see cref="T:System.Xml.Linq.XElement"/>.
+            </returns>
+            <exception cref="T:System.NullReferenceException">
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.Save(Automation.Common.Testing.Entity.TestResult)">
+            <summary>
+            To save the test result into the result file.
+            </summary>
+            <param name="result">
+            The test result entity.
+            </param>
+            <exception cref="T:System.InvalidOperationException">
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.SaveContent(System.Xml.Linq.XDocument,System.String)">
+            <summary>
+            The save result.
+            </summary>
+            <param name="document">
+            The document.
+            </param>
+            <param name="resultFile">
+            The result file.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.UpdateEntityElement(Automation.Common.Testing.Entity.EntityBase,System.Xml.Linq.XElement)">
+            <summary>
+            Update test entity.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="element">
+            The element.
+            </param>
+            <exception cref="T:System.NullReferenceException">
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.UpdateProjectElement(Automation.Common.Testing.Entity.TestProject)">
+            <summary>
+            Updates the project element in this instance.
+            </summary>
+            <param name="testProject">
+            The test project.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.UpdateScenarioElement(Automation.Common.Testing.Entity.Scenario)">
+            <summary>
+            Updates the scenario element in this instance.
+            </summary>
+            <param name="scenario">
+            The scenario.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.UpdateTestCaseElement(Automation.Common.Testing.Entity.TestCase)">
+            <summary>
+            Updates the test case element in this instance.
+            </summary>
+            <param name="testCase">
+            The test case.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.UpdateTestClassElement(Automation.Common.Testing.Entity.TestClass)">
+            <summary>
+            Updates the test class element in this instance.
+            </summary>
+            <param name="testClass">
+            The test class.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Entity.TestResult.UpdateTestEntityMessageElement(Automation.Common.Testing.Entity.Message,System.Xml.Linq.XElement)">
+            <summary>
+            The update test entity message element.
+            </summary>
+            <param name="message">
+            The message.
+            </param>
+            <param name="testEntityElement">
+            The test entity element. Either a test case or a test scenario.
+            </param>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.TestResult.ResultFile">
+            <summary>
+                Gets the result file.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.Entity.TestResult.Projects">
+            <summary>
+                Gets the projects.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.LinqExtension">
+            <summary>
+            The linq extension.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.LinqExtension.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+                Perform the action on each of the item from source.
+            </summary>
+            <param name="source">
+            The source.
+            </param>
+            <param name="action">
+            The action.
+            </param>
+            <typeparam name="TSource">
+            The source data type.
+            </typeparam>
+            <exception cref="T:System.ArgumentNullException">
+            </exception>
+        </member>
+        <member name="T:Automation.Common.Testing.Status">
+            <summary>
+            The status for test cases, test scenarios or test classes.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Status.NotStarted">
+            <summary>
+            The not started status.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Status.Pass">
+            <summary>
+            The pass.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Status.PartiallyPass">
+            <summary>
+            The partially pass.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.Status.Fail">
+            <summary>
+            The fail.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.DateTimeAdapter">
+            <summary>
+            Defines pre-defined date time formats.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.DateTimeAdapter.Now">
+            <summary>
+            Gets current time with format: "Hour:Minute:Second".
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.DateTimeAdapter.DateNow">
+            <summary>
+            Gets current time with format: "day Month Hour:Minute:Second".
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.DateTimeAdapter.FileTimeStamp">
+            <summary>
+            Gets the file time stamp.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.TestBase">
+            <summary>
+            The test base.
+            </summary>
+        </member>
+        <member name="F:Automation.Common.Testing.TestBase.DefaultResultsFileName">
+            <summary>
+            The result file name.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.TestBase.#cctor">
+            <summary>
+            Initialises static members of the <see cref="T:Automation.Common.Testing.TestBase"/> class.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.TestBase.SetTestClass(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext,System.Boolean)">
+            <summary>
+            Setup test class entity.
+            </summary>
+            <param name="testContext">
+            The test context.
+            </param>
+            <param name="useDefaultResultFile">
+            A flag indicates whether uses the default result file.
+            </param>
+            <returns>
+            The <see cref="T:Automation.Common.Testing.Entity.TestClass"/>.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.TestBase.SetTestCase(System.Boolean)">
+            <summary>
+            Initialize the test case.
+            </summary>
+            <param name="useDefaultResultFile">
+            A flag indicating whether to use the common result file.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestBase.SetTestCase(Automation.Common.Testing.Entity.TestClass,System.Boolean)">
+            <summary>
+            Sets test case entity.
+            </summary>
+            <param name="testClass">
+            The test class.
+            </param>
+            <param name="useDefaultResultFile">
+            A flag indicating whether to use the default result file.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestBase.PrepareDropRoot">
+            <summary>
+            Prepares the drop root for test results.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.TestBase.WaitForCondition(Automation.Common.Testing.Predicate)">
+            <summary>
+            Blocks the current thread until the specified condition is met, or until the specified time-out expires.
+            </summary>
+            <returns>
+            True if the condition is met before the time-out; otherwise, false.
+            </returns>
+            <param name="conditionEvaluator">
+            The delegate to evaluate the condition.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestBase.SaveTestResults(Automation.Common.Testing.Entity.TestClass)">
+            <summary>
+            Saves test results.
+            </summary>
+            <param name="testClass">
+            The test class.
+            </param>
+        </member>
+        <member name="P:Automation.Common.Testing.TestBase.ResultsDirectory">
+            <summary>
+            Gets the results directory.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.TestBase.TestContext">
+            <summary>
+            Gets or sets the test context which provides information about and functionality for the current test run.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.TestBase.TestSettings">
+            <summary>
+            Gets the test settings.
+            </summary>
+        </member>
+        <member name="P:Automation.Common.Testing.TestBase.CurrentTestCase">
+            <summary>
+            Gets or sets the current test case.
+            </summary>
+        </member>
+        <member name="T:Automation.Common.Testing.TestEntityAssert">
+            <summary>
+            The test entity extensions.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertAndContinue(Automation.Common.Testing.Entity.TestEntity,System.Action)">
+            <summary>
+                To assert and continue if the assertion fails. The assertion message is added into the current test entity.
+            </summary>
+            <param name="testEntity">
+                The test entity.
+            </param>
+            <param name="assert">
+                The assert action.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertAreEqual``1(Automation.Common.Testing.Entity.TestEntity,``0,``0)">
+            <summary>
+            Verifies that two specified generic type data are equal by using the equality
+                operator. The assertion fails if they are not equal. Displays a message if
+                the assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="expected">
+            The first generic type data to compare. This is the generic type data the
+                unit test expects.
+            </param>
+            <param name="actual">
+            The second generic type data to compare. This is the generic type data the
+                unit test produced.
+            </param>
+            <typeparam name="T">
+            The object specific type.
+            </typeparam>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertAreEqual``1(Automation.Common.Testing.Entity.TestEntity,``0,``0,System.String)">
+            <summary>
+            Verifies that two specified generic type data are equal by using the equality operator. The assertion fails if they are not equal. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="expected">
+            The first generic type data to compare. This is the generic type data the unit test expects.
+            </param>
+            <param name="actual">
+            The second generic type data to compare. This is the generic type data the unit test produced.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results.
+            </param>
+            <typeparam name="T">
+            The object specific type.
+            </typeparam>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="expected"/> is not equal to <paramref name="actual"/>.
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertAreEqual``1(Automation.Common.Testing.Entity.TestEntity,``0,``0,System.String,System.Object[])">
+            <summary>
+            Verifies that two specified generic type data are equal by using the equality operator. The assertion fails if they are not equal. Displays a message if the assertion fails, and applies the specified formatting to it.
+            </summary>
+            <param name="testEntity">
+            The test Entity.
+            </param>
+            <param name="expected">
+            The first generic type data to compare. This is the generic type data the unit test expects.
+            </param>
+            <param name="actual">
+            The second generic type data to compare. This is the generic type data the unit test produced.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results.
+            </param>
+            <param name="parameters">
+            An array of parameters to use when formatting <paramref name="message"/>.
+            </param>
+            <typeparam name="T">
+            The object specific type.
+            </typeparam>
+            <exception cref="T:Microsoft.VisualStudio.TestTools.UnitTesting.AssertFailedException">
+            <paramref name="expected"/> is not equal to <paramref name="actual"/>.
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertCollectionAreEquivalent(Automation.Common.Testing.Entity.TestEntity,System.Collections.ICollection,System.Collections.ICollection)">
+            <summary>
+            Assert if two collection of object are equivalent
+            </summary>
+            <param name="testEntity">The test Entity.</param>
+            <param name="expected">The expected collection</param>
+            <param name="actual">The actual collection</param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertCollectionAreEquivalent(Automation.Common.Testing.Entity.TestEntity,System.Collections.ICollection,System.Collections.ICollection,System.String)">
+            <summary>
+            Assert if two collection of object are equivalent
+            </summary>
+            <param name="testEntity">The test Entity.</param>
+            <param name="expected">The expected collection</param>
+            <param name="actual">The actual collection</param>
+            <param name="message">A message to display if the assertion fails. This message can be seen in the unit test results.</param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertCollectionAreEquivalent(Automation.Common.Testing.Entity.TestEntity,System.Collections.ICollection,System.Collections.ICollection,System.String,System.Object[])">
+            <summary>
+            Assert if two collection of object are equivalent
+            </summary>
+            <param name="testEntity">The test Entity.</param>
+            <param name="expected">The expected collection</param>
+            <param name="actual">The actual collection</param>
+            <param name="message">A message to display if the assertion fails. This message can be seen in the unit test results.</param>
+            <param name="parameters">An array of parameters to use when formatting <paramref name="message"/>.</param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsFalse(Automation.Common.Testing.Entity.TestEntity,System.Boolean)">
+            <summary>
+            Verifies that the specified condition is false. The assertion fails if the condition is true,
+                a message is added to the test entity if assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="condition">
+            The condition.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsFalse(Automation.Common.Testing.Entity.TestEntity,System.Boolean,System.String)">
+            <summary>
+            Verifies that the specified condition is false. The assertion fails if the condition is true,
+                a message is added to the test entity if assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="condition">
+            The condition.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results, if no test entity specified.
+                Or a message added to the current test entity.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsFalse(Automation.Common.Testing.Entity.TestEntity,System.Boolean,System.String,System.Object[])">
+            <summary>
+            Verifies that the specified condition is false. The assertion fails if the condition is true,
+                a message is added to the test entity if assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="condition">
+            The condition.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results, if no test entity specified.
+                Or a message added to the current test entity.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsNotNull(Automation.Common.Testing.Entity.TestEntity,System.Object)">
+            <summary>
+            Verifies that the specified object is not null. The assertion fails if it is null. Displays a message if the assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsNotNull(Automation.Common.Testing.Entity.TestEntity,System.Object,System.String)">
+            <summary>
+            Verifies that the specified object is not null. The assertion fails if it is null. Displays a message if the assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results when no test entity specified.
+                Or a message added to the current test entity.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsNotNull(Automation.Common.Testing.Entity.TestEntity,System.Object,System.String,System.Object[])">
+            <summary>
+            Verifies that the specified object is not null. The assertion fails if it is null. Displays a message if the assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results when no test entity specified.
+                Or a message added to the current test entity.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsNull(Automation.Common.Testing.Entity.TestEntity,System.Object)">
+            <summary>
+            Verifies that the specified object is null. The assertion fails if it is null. Displays a message if the assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsNull(Automation.Common.Testing.Entity.TestEntity,System.Object,System.String)">
+            <summary>
+            Verifies that the specified object is null. The assertion fails if it is null. Displays a message if the assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results when no test entity specified.
+                Or a message added to the current test entity.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsNull(Automation.Common.Testing.Entity.TestEntity,System.Object,System.String,System.Object[])">
+            <summary>
+            Verifies that the specified object is null. The assertion fails if it is null. Displays a message if the assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results when no test entity specified.
+                Or a message added to the current test entity.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsTrue(Automation.Common.Testing.Entity.TestEntity,System.Boolean)">
+            <summary>
+            Verifies that the specified condition is true. The assertion fails if the condition is false,
+                a message is added to the test entity if assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="condition">
+            The condition.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsTrue(Automation.Common.Testing.Entity.TestEntity,System.Boolean,System.String)">
+            <summary>
+            Verifies that the specified condition is true. The assertion fails if the condition is false,
+                a message is added to the test entity if assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="condition">
+            The condition.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results when no test entity specified.
+                Or a message added to the current test entity.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestEntityAssert.AssertIsTrue(Automation.Common.Testing.Entity.TestEntity,System.Boolean,System.String,System.Object[])">
+            <summary>
+            Verifies that the specified condition is true. The assertion fails if the condition is false,
+                a message is added to the test entity if assertion fails.
+            </summary>
+            <param name="testEntity">
+            The test entity.
+            </param>
+            <param name="condition">
+            The condition.
+            </param>
+            <param name="message">
+            A message to display if the assertion fails. This message can be seen in the unit test results when no test entity specified.
+                Or a message added to the current test entity.
+            </param>
+            <param name="parameters">
+            The parameters.
+            </param>
+        </member>
+        <member name="T:Automation.Common.Testing.TestExecution">
+            <summary>
+                Defines the test case execution flow controls.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.TestExecution.Throws(System.Action)">
+            <summary>
+            Executes an exception, expecting an exception to be thrown.
+                Like Assert.Throws in NUnit.
+            </summary>
+            <param name="action">
+            The action.
+            </param>
+            <returns>
+            The exception thrown by the executionAction
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.TestExecution.Throws(System.Action,System.String)">
+            <summary>
+            Executes an exception, expecting an exception to be thrown.
+                Like Assert.Throws in NUnit.
+            </summary>
+            <param name="action">
+            The action.
+            </param>
+            <param name="message">
+            The error message if the expected exception is not thrown
+            </param>
+            <returns>
+            The exception thrown by the executionAction
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.TestExecution.Throws``1(System.Action)">
+            <summary>
+            Executes an exception, expecting an exception of a specific type to be thrown.
+                Like Assert.Throws in NUnit.
+            </summary>
+            <typeparam name="T">
+            The exception type.
+            </typeparam>
+            <param name="action">
+            The action.
+            </param>
+            <returns>
+            The exception thrown by the executionAction
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.TestExecution.Throws``1(System.Action,System.String)">
+            <summary>
+            Executes an exception, expecting an exception of a specific type to be thrown.
+                Like Assert.Throws in NUnit.
+            </summary>
+            <typeparam name="T">
+            The exception type.
+            </typeparam>
+            <param name="action">
+            The action.
+            </param>
+            <param name="message">
+            The error message if the expected exception is not thrown
+            </param>
+            <returns>
+            The exception thrown by the executionAction
+            </returns>
+        </member>
+        <member name="T:Automation.Common.Testing.TestUtilities">
+            <summary>
+            The utilities for test entities managements, or to facilitate test execution.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.TestUtilities.CheckReflectionTypeLoadException(System.Exception)">
+            <summary>
+            The reflection type load exception.
+            </summary>
+            <param name="exception">
+            The exception.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestUtilities.CopyTo(Automation.Common.Testing.Entity.TestResult,System.String)">
+            <summary>
+            To copy the test results to the specified destination. i.e. @"C:\drops\TestResult"
+            </summary>
+            <param name="result">
+            The current test result.
+            </param>
+            <param name="destination">
+            The destination.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.TestUtilities.FullyQualifiedTestCaseName(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext)">
+            <summary>
+            The get test class name.
+            </summary>
+            <param name="testContext">
+            The test context.
+            </param>
+            <returns>
+            The System.String.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.TestUtilities.GetNameSpace(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext)">
+            <summary>
+            Gets the name space from the current test context.
+            </summary>
+            <param name="testContext">
+            The test context.
+            </param>
+            <returns>
+            The System.String.
+            </returns>
+        </member>
+        <member name="M:Automation.Common.Testing.TestUtilities.GetStampedFileName(System.String)">
+            <summary>
+            The get stamped file name.
+            </summary>
+            <param name="fileName">
+            The file name.
+            </param>
+            <returns>
+            The System.String.
+            </returns>
+            <exception cref="T:System.InvalidOperationException">
+            </exception>
+        </member>
+        <member name="M:Automation.Common.Testing.TestUtilities.GetTestClassName(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext)">
+            <summary>
+            The get test class name.
+            </summary>
+            <param name="testContext">
+            The test context.
+            </param>
+            <returns>
+            The System.String.
+            </returns>
+        </member>
+        <member name="T:Automation.Common.Testing.Wait">
+            <summary>
+            The waiting helpers.
+            </summary>
+        </member>
+        <member name="M:Automation.Common.Testing.Wait.WaitForCondition``1(``0,System.Predicate{``0},System.Int32)">
+            <summary>
+            Blocks the current thread until the specified condition is met, or until the specified time-out expires.
+            </summary>
+            <returns>
+            True if the condition is met before the time-out; otherwise, false.
+            </returns>
+            <param name="conditionContext">
+            The context to evaluate the condition.
+            </param>
+            <param name="conditionEvaluator">
+            The delegate to evaluate the condition.
+            </param>
+            <param name="millisecondsTimeout">
+            The number of milliseconds before time-out.
+            </param>
+            <typeparam name="T">
+            The <see cref="T:System.Type"/> that specifies the Type for the condition and predicate.
+            </typeparam>
+        </member>
+        <member name="M:Automation.Common.Testing.Wait.WaitForCondition(Automation.Common.Testing.Predicate,System.Int32)">
+            <summary>
+            Blocks the current thread until the specified condition is met, or until the specified time-out expires.
+            </summary>
+            <returns>
+            True if the condition is met before the time-out; otherwise, false.
+            </returns>
+            <param name="conditionEvaluator">
+            The delegate to evaluate the condition.
+            </param>
+            <param name="millisecondsTimeout">
+            The number of milliseconds before time-out.
+            </param>
+        </member>
+        <member name="M:Automation.Common.Testing.Wait.CheckForMinimumPermissibleValue(System.Int32,System.Int32,System.String)">
+            <summary>
+            Checks for minimum permissible value.
+            </summary>
+            <param name="minimumPermissibleValue">
+            The minimum permissible value.
+            </param>
+            <param name="value">
+            The value to be validated.
+            </param>
+            <param name="parameterName">
+            The parameter name.
+            </param>
+        </member>
+    </members>
+</doc>
